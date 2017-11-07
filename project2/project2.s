@@ -31,6 +31,12 @@ cmp  r2, #'A'
 bge  copy
 cmp  r2, #47
 beq  count
+cmp  r2, #32
+beq  copy
+cmp  r2, #39
+beq  copy
+cmp  r2, #44
+beq  copy
 ;cmp  r2, #' '
 ;beq  copy
 ;bal  skip
@@ -47,6 +53,7 @@ beq  skip
 double:
 mov  r2,#32
 strb r2, [r1], #1
+mov  r2,#10
 strb r2, [r1], #1
 mov  r6,#0
 cmp  r6,#0
