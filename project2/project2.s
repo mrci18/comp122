@@ -29,9 +29,28 @@ cmp  r2, #'Z'
 bgt  skip
 cmp  r2, #'A'
 bge  copy
+cmp  r2, #47
+beq  count
 ;cmp  r2, #' '
 ;beq  copy
 ;bal  skip
+
+count:
+add  r6,r2,r6
+cmp  r6, #94
+beq  double
+cmp  r6, #47
+beq  skip
+;add  r0, r0, #1
+;bal charloop
+
+double:
+mov  r2,#32
+strb r2, [r1], #1
+strb r2, [r1], #1
+mov  r6,#0
+cmp  r6,#0
+beq  skip
 
 lower:
 sub  r2, r2, #32
