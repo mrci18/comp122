@@ -4,7 +4,7 @@ mov r2,#1000
 swi 0x205 ;Display integer
 BCS End
 
-;Prompt user to press a blue button
+;Tell user to press blue button
 PressBlue:
 ldr r0,=PressB
 swi 0x02
@@ -129,7 +129,7 @@ mov r0,#0xE3
 swi 0x200
 BAL PressBlack
 
-;Tell user to press button 
+;Tell user to press black button 
 PressBlack:
 ldr r0,=PressBLK
 swi 0x02
@@ -138,20 +138,20 @@ PressBLK: .asciz "Press one black button\n"
 Black:
 swi 0x202
 cmp r0,#0x02
-beq Left
-bal Right
+BEQ Left
+BAL Right
 
 Left:
 mov r0,#0x02
 swi 0x201 ;Left LED on
-Bal Subtract
+BAL Subtract
 
 Right:
 cmp r0,#0
 BEQ NotPressed
 mov r0,#0x01
 swi 0x201 ;Right LED on
-Bal Add
+BAL Add
 
 Subtract:
 SUB r2,r2,#1
