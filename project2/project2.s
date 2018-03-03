@@ -43,6 +43,10 @@ cmp  r2, #39
 beq  copy
 cmp  r2, #44
 beq  copy
+cmp  r2, #65
+blt  copy
+cmp  r2, #122
+bcs ExitFile
 
 ;Check if there has been two consecutive forward slashes
 count:
