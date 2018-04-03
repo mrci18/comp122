@@ -1,6 +1,7 @@
 ;Charles Ibo
 ;Comp 122/L
 ;Project 1
+;test commit 1
 
 ;Open file:
 ldr r0,=MyFile 
