@@ -2,6 +2,7 @@
 ;Comp 122/L
 ;Project 1
 ;test commit 1
+;test commit 2
 
 ;Open file:
 ldr r0,=MyFile 
